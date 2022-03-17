@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Foods!</title>
+        <meta name="description" content="foods!">
+        <meta name="author" content="Nam Phan">
+    </head>   
+
+    <body>
+        <div>
+            <span class="test">
+                <button>Click me</button>
+            </span>
+        </div>
+    </body>
+
+<script>
+    //capturing > target > bubbling
+    //
+    document.querySelector('span').addEventListener("click", capturing, true)
+    document.querySelector('button').addEventListener("click", bubble)
+
+    function capturing(){
+        console.log("capturing!")
+    }
+
+    function bubble(){
+        console.log("bubbling!")
+    }
+</script>
+</html>
