@@ -18,7 +18,7 @@
     //capturing > target > bubbling
     //
     document.querySelector('span').addEventListener("click", capturing, true)
-    document.querySelector('button').addEventListener("click", bubble)
+    document.querySelector('span').addEventListener("click", bubble)
 
     function capturing(){
         console.log("capturing!")
