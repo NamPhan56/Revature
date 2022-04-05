@@ -9,23 +9,32 @@
     <body>
         <div>
             <span class="test">
-                <button>Click me</button>
+                <button style="color:aqua">Click me</button>
             </span>
         </div>
+        <script>
+            //capturing > target > bubbling
+            document.querySelector('span').addEventListener("click", capturing, true)
+            document.querySelector('span').addEventListener("click", bubble)
+        
+            if(0.1 + 0.2 == 0.3){
+                console.log("true");
+            }
+            else{
+                console.log("false");
+            }
+            window.onload = function a( ){ console.log(obj.prop); }
+
+            console.log(null == null);
+            console.log(NaN == NaN);
+
+            function capturing(){
+                console.log("capturing!")
+            }
+        
+            function bubble(){
+                console.log("bubbling!")
+            }
+        </script>
     </body>
-
-<script>
-    //capturing > target > bubbling
-    //
-    document.querySelector('span').addEventListener("click", capturing, true)
-    document.querySelector('span').addEventListener("click", bubble)
-
-    function capturing(){
-        console.log("capturing!")
-    }
-
-    function bubble(){
-        console.log("bubbling!")
-    }
-</script>
 </html>
