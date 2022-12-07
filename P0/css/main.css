@@ -1,0 +1,36 @@
+/*Author: Nam Phan*/
+
+/*custom properties to id: animalImageFigure*/
+/* figure animalImageFigure is a css selector, in this case, selecting the element with id="animalImageFigure"*/
+#animalImageFigure {
+    /* These are css declarations, key-value pairs*/
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+
+/*custom properties to id: displayName*/
+#displayName {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+/* style for the main table */
+#mainTable {
+    display: table;
+    border:1px solid black;
+}
+
+/* style for the header and data of the main table. */
+#mainTable tr th, #mainTable tr td {
+    text-align: left;
+    padding: 10px;
+    border:1px solid black;
+}
+
+/* style for the preview image */
+#previewImage {
+    height: 100px;
+    width: 100px;
+}

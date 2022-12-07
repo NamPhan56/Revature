@@ -1,0 +1,12 @@
+/*Author: Nam Phan*/
+
+/* this is the styling for buttons that are nested in nav tag. */
+nav {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    justify-content: space-around;
+    background-color: rgb(46, 224, 76);
+    /* padding the "nav" element's box model's padding by 20 pixels */
+    padding: 20px;
+}

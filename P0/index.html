@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Animals!</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Project 0 to show off our HTML, CSS, and JS skills">
+        <meta name="keywords" content="HTML,CSS, and JavaScript">
+        <meta name="author" content="Nam Phan">
+        <meta name="filename" content="index.html">
+        <meta name="created date" content="03/16/2022">
+        <meta name="last modified" content="03/17/2022">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css\nav.css">
+        <link rel="stylesheet" type="text/css" href="css\main.css">
+        <script type="text/javascript" src="js/animals.js"></script>
+        <script type="text/javascript" src="js/animalMouseover.js"></script>
+    </head>
+
+    <body>
+        <!-- header tag contains title, and navigation -->
+        <header>
+            <!-- This is nav bar element -->
+            <nav>
+                <div> Animals.com </div>
+                <button id="lionsButton" type="button" onclick="lions()">Lion</button>
+                <button id="elephantsButton" type="button" onclick="elephants()">Elephant</button>
+                <button id="dolphinsButton" type="button" onclick="dolphins()">Dolphin</button>
+                <button id="tunaButton" type="button" onclick="tuna()">Tuna</button>
+            </nav>
+        </header>
+
+        <!-- Preview Image here -->
+        <span>
+            <img id="previewImage" style="visibility:hidden" height="100px" width="100px"></img>
+        </span>
+
+        <!-- figure and figcaption tag for screen reader technologies! -->
+        <!-- This is the image of the animal, the img tag is a self closing tag -->
+        <span>
+            <figure id="animalImageFigure">
+                <img id="animalImage" src="" alt=""></img>
+                <figcaption></figcaption>
+            </figure>
+        </span>
+
+        <!-- This is the name of the animal -->
+        <h2 id="displayName"></h2>
+
+        <!-- div and table are block level elements -->
+        <!-- Uses vertical table heads instead of horizontal ones -->
+        <div style="display:flex; justify-content:center">
+            <table id="mainTable" style="visibility:hidden">
+                <tr>
+                    <th>PageID</th>
+                    <td id="tablePageID"></td>
+                </tr>
+                <tr>
+                    <th>Link</th>
+                    <td><a id="tableLink" href=""></a></td>
+                </tr>
+                <tr>
+                    <th >Habitat</th>
+                    <td id="tableHabitat"></td>
+                </tr>
+                <tr>
+                    <th>Eats</th>
+                    <td id="tableEats"></td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td id="tableDes"></td>
+                </tr>
+            </table>
+        </div>
+        <!-- internal js script for to event listen for mouseovers of the buttons, and show picture preview -->
+        <script>
+            document.querySelector('nav #lionsButton').addEventListener("mouseover", hoverPicLion);
+            document.querySelector('nav #elephantsButton').addEventListener("mouseover", hoverPicElephant);
+            document.querySelector('nav #dolphinsButton').addEventListener("mouseover", hoverPicDolphin);
+            document.querySelector('nav #tunaButton').addEventListener("mouseover", hoverPicTuna);
+
+            /*
+                This hides the preview picture via eventlistener if mouseover is not in the (nav button) element
+                Uses capture instead of bubbling to have display listeners called first, then the hide listener.
+                A hack-around, but works, and demos my knowledge of event propagation: Capturing -> Target -> Bubbling
+            */
+            document.querySelector(':not(nav button)').addEventListener("mouseover", hidePrePicture, true);
+        </script>
+    </body>
+</html>
